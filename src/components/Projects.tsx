@@ -18,7 +18,8 @@ const projects = [
     role: "Full-stack design and implementation—API architecture, data modeling, deployment",
     tech: ["Next.js", "React", "TypeScript", "Tailwind", "MongoDB"],
     category: "Full-Stack Web Application",
-    image: leadsManagementImg
+    image: leadsManagementImg,
+    githubUrl: "https://github.com/Isharam99/Media-Dashboard.git"
   },
   {
     title: "Speakraft",
@@ -28,7 +29,8 @@ const projects = [
     role: "AI module design with instant feedback via modal UI",
     tech: ["AI/ML", "NLP", "React", "TensorFlow"],
     category: "AI & Web Application",
-    image: speakraftImg
+    image: speakraftImg,
+    githubUrl: "https://github.com/Isharam99"
   },
   {
     title: "Arutha",
@@ -38,7 +40,8 @@ const projects = [
     role: "AI integration and gesture recognition",
     tech: ["Kotlin", "OpenCV", "TensorFlow Lite", "Android"],
     category: "Mobile App Development",
-    image: aruthaImg
+    image: aruthaImg,
+    githubUrl: "https://github.com/Isharam99/Research-Signin-Language-ASL-and-SSL.git"
   },
   {
     title: "Hot Kitchen",
@@ -48,7 +51,8 @@ const projects = [
     role: "Backend optimization and API development",
     tech: ["Node.js", "Express", "MongoDB", "JWT"],
     category: "Web Application",
-    image: hotKitchenImg
+    image: hotKitchenImg,
+    githubUrl: "https://github.com/Isharam99"
   },
   {
     title: "Dayata Saviya",
@@ -58,7 +62,8 @@ const projects = [
     role: "Mobile app development",
     tech: ["Kotlin", "Firebase", "Android"],
     category: "Mobile Development",
-    image: dayataSaviyaImg
+    image: dayataSaviyaImg,
+    githubUrl: "https://github.com/Isharam99/Dayata-Saviya.git"
   },
   {
     title: "EventPOP.lk",
@@ -68,7 +73,8 @@ const projects = [
     role: "Full-stack development",
     tech: ["Java Servlets", "Firebase", "MySQL"],
     category: "Web Application",
-    image: eventpopImg
+    image: eventpopImg,
+    githubUrl: "https://github.com/Isharam99"
   },
   {
     title: "Spark.lk",
@@ -78,7 +84,8 @@ const projects = [
     role: "Full-stack development",
     tech: ["HTML", "CSS", "JavaScript", "PHP", "SQL"],
     category: "Web Application",
-    image: sparkImg
+    image: sparkImg,
+    githubUrl: "https://github.com/Isharam99/Spark.lk.git"
   }
 ];
 
@@ -97,8 +104,13 @@ const Projects = () => {
           {projects.map((project, index) => (
             <Card 
               key={project.title}
-              className="overflow-hidden card-gradient border-primary/20 hover:border-primary/50 transition-all duration-300 hover:shadow-xl hover:-translate-y-2 group animate-fade-in-up"
+              className="overflow-hidden card-gradient border-primary/20 hover:border-primary/50 transition-all duration-300 hover:shadow-xl hover:-translate-y-2 group animate-fade-in-up cursor-pointer"
               style={{ animationDelay: `${index * 0.1}s` }}
+              onClick={() => {
+                if (project.githubUrl) {
+                  window.open(project.githubUrl, '_blank');
+                }
+              }}
             >
               <div className="relative h-48 overflow-hidden">
                 <img 
@@ -107,6 +119,11 @@ const Projects = () => {
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent opacity-60"></div>
+                <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <div className="bg-background/90 backdrop-blur-sm rounded-full p-2">
+                    <Github className="h-5 w-5 text-primary" />
+                  </div>
+                </div>
               </div>
               
               <div className="p-6">
@@ -134,7 +151,7 @@ const Projects = () => {
                   </p>
                 </div>
 
-                <div className="flex flex-wrap gap-2">
+                <div className="flex flex-wrap gap-2 mb-4">
                   {project.tech.map((tech) => (
                     <Badge 
                       key={tech}
@@ -145,6 +162,14 @@ const Projects = () => {
                     </Badge>
                   ))}
                 </div>
+
+                {project.githubUrl && (
+                  <div className="flex items-center gap-2 text-sm text-primary group-hover:text-primary/80 transition-colors">
+                    <Github className="h-4 w-4" />
+                    <span>View on GitHub</span>
+                    <ExternalLink className="h-3 w-3" />
+                  </div>
+                )}
               </div>
             </Card>
           ))}
