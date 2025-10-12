@@ -39,22 +39,22 @@ const Skills = () => {
           A comprehensive toolkit for building modern, scalable, and intelligent applications
         </p>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
           {skillCategories.map((category, index) => (
             <Card 
               key={category.title}
-              className="p-6 hover:border-primary/50 transition-all duration-300 hover:shadow-lg hover:-translate-y-1 card-gradient animate-fade-in-up"
+              className="p-4 sm:p-6 hover:border-primary/50 transition-all duration-300 hover:shadow-lg hover:-translate-y-1 card-gradient animate-fade-in-up"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
-              <h3 className="text-xl font-semibold mb-4 text-primary">
+              <h3 className="text-lg sm:text-xl font-semibold mb-3 sm:mb-4 text-primary">
                 {category.title}
               </h3>
-              <div className="flex flex-wrap gap-2">
+              <div className="flex flex-wrap gap-1.5 sm:gap-2">
                 {category.skills.map((skill) => (
                   <Badge 
                     key={skill}
                     variant="secondary"
-                    className="bg-background/50 hover:bg-primary hover:text-primary-foreground transition-all duration-300 cursor-default"
+                    className="bg-background/50 hover:bg-primary hover:text-primary-foreground transition-all duration-300 cursor-default text-xs sm:text-sm"
                   >
                     {skill}
                   </Badge>

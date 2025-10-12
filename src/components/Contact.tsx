@@ -13,23 +13,23 @@ const Contact = () => {
           I'm currently open to new opportunities. Whether you have a question or just want to say hi, feel free to reach out!
         </p>
 
-        <div className="grid md:grid-cols-2 gap-8">
+        <div className="grid md:grid-cols-2 gap-6 lg:gap-8">
           {/* Contact Information */}
-          <div className="space-y-6">
-            <Card className="p-6 card-gradient border-primary/20 hover:border-primary/50 transition-all duration-300">
-              <h3 className="text-xl font-semibold mb-6">Contact Information</h3>
+          <div className="space-y-4 sm:space-y-6">
+            <Card className="p-4 sm:p-6 card-gradient border-primary/20 hover:border-primary/50 transition-all duration-300">
+              <h3 className="text-lg sm:text-xl font-semibold mb-4 sm:mb-6">Contact Information</h3>
               
-              <div className="space-y-4">
+              <div className="space-y-3 sm:space-y-4">
                 <a 
                   href="mailto:ishara835@gmail.com"
-                  className="flex items-center gap-4 text-muted-foreground hover:text-primary transition-colors group"
+                  className="flex items-center gap-3 sm:gap-4 text-muted-foreground hover:text-primary transition-colors group"
                 >
-                  <div className="p-3 bg-primary/10 rounded-lg group-hover:bg-primary/20 transition-colors">
-                    <Mail className="h-5 w-5 text-primary" />
+                  <div className="p-2.5 sm:p-3 bg-primary/10 rounded-lg group-hover:bg-primary/20 transition-colors">
+                    <Mail className="h-4 w-4 sm:h-5 sm:w-5 text-primary" />
                   </div>
                   <div>
                     <p className="text-xs text-muted-foreground">Email</p>
-                    <p className="font-medium">ishara835@gmail.com</p>
+                    <p className="font-medium text-sm sm:text-base">ishara835@gmail.com</p>
                   </div>
                 </a>
 
