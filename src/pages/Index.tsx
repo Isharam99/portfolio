@@ -6,10 +6,12 @@ import Experience from "@/components/Experience";
 import Projects from "@/components/Projects";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
+import ScrollAnimatedBackground from "@/components/ScrollAnimatedBackground";
 
 const Index = () => {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen relative">
+      <ScrollAnimatedBackground />
       <Navbar />
       <main>
         <Hero />
